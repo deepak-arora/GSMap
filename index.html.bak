@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>GS Map</title>
+	
+	    <!-- <script src= -->
+<!-- "https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"> -->
+    <!-- </script> -->
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="./css/style3.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="./css/jquery.mCustomScrollbar.min.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="./js/solid.js"></script>
+    <script defer src="./js/fontawesome.js"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+</head>
+
+<body onload="initMap()">
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div id="dismiss">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+
+            <div class="sidebar-header">
+                <h3></h3>
+            </div>
+			<div id="nearby-centres">
+			</div>
+
+<!--
+            <ul class="list-unstyled components">
+                <p>Nearby Centres</p>
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#">Export</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled CTAs">
+                <li>
+                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+                </li>
+                <li>
+                    <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+                </li>
+            </ul> -->
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        
+                    </button>
+					
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<div style="width:96%;height:50px;padding-top:10px;padding-left:30px;color:black">
+							<label><b>Latitude</b></label>
+							<!--<<input type="text" class="inputtext" name="Latitude" id="latitude" value="" placeholder="e.g. 26.739483" />-->
+							<input type="text" class="inputtext" name="Latitude" id="latitude" value="27.67127227783203" placeholder="e.g. 26.739483" />
+							
+							<label style="padding-left:12px;"><b>Longitude</b></label>
+							<!--<input type="text" class="inputtext" name="Longitude" id="longitude" value="" placeholder="e.g. 75.85058" /> -->
+							<input type="text" class="inputtext" name="Longitude" id="longitude" value="76.16187286376953" placeholder="e.g. 75.85058" />
+							
+							<label style="padding-left:12px;"><b>Range (In Kms.)</b></label>
+							<input type="number" class="inputtext" name="radius" step="1" value="25" id="radius" />
+							
+							<input type="button" value="Show On Map" id="btnShowOnMap" />
+						</div>
+						<div style="float:right">
+							<img src="./images/logo.png" width="50" height="60" />
+						</div>
+					
+                        
+                    </div>
+                </div>
+            </nav>
+
+            <!--The div element for the map -->
+			<div id="map"></div>
+			
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <!-- Popper.JS -->
+    <script src="./js/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="./js/bootstrap.min.js"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="./js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="./js/index.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+		
+		 /* function takeshot() {
+            let div =
+                document.getElementById('map');
+  
+            // Use the html2canvas
+            // function to take a screenshot
+            // and append it
+            // to the output div
+            html2canvas(div).then(
+                function (canvas) {
+                    document
+                    .getElementById('output')
+                    .appendChild(canvas);
+                })
+        }*/
+    </script>
+</body>
+
+</html>
