@@ -107,7 +107,7 @@ a:focus {
 #sidebar .sidebar-header {
     padding: 20px;
     background: #6d7fcc;
-	margin-bottom:16px;
+	margin-bottom: 16px;
 }
 
 #sidebar ul.components {
@@ -198,4 +198,16 @@ a.article:hover {
   width: 100%;
   float:left
   /* The width is the width of the web page */
+}
+
+
+@media screen and (max-width: 600px) {
+  .frm2 {
+    visibility: hidden;
+    clear: both;
+    float: left;
+    margin: 10px auto 5px 20px;
+    width: 28%;
+    display: none;
+  }
 }
