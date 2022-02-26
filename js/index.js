@@ -20,9 +20,9 @@ function initMap() {
 	$(function() {
 		$('.btnShowOnMap').click(function() {
 			clearMap();
-			var latitude = $('#latitude').val();
-			var longitude = $('#longitude').val();
-			var radius = $('#radius').val();
+			var latitude = (screen.width > 800) ? $('#latitude').val() : $('#latitudeMob').val();
+			var longitude = (screen.width > 800) ? $('#longitude').val() : $('#longitudeMob').val();
+			var radius = (screen.width > 800) ? $('#radius').val() : $('#radiusMob').val();
 			var newCenterLocation = { lat: parseFloat(latitude), lng: parseFloat(longitude) }
 			
 			placeNewCenterMaker(newCenterLocation);

@@ -18,7 +18,7 @@ function initMap() {
 	//const allCentres = [["Achrol - SC", [27.1418,75.96436]], ["Akera Dungar - SP", [27.01077,75.79708]], ["Amer - SP", [26.98966,75.85308]], ["Bagru - SC", [26.77919,75.57433]]];
    
 	$(function() {
-		$('#btnShowOnMap').click(function() {
+		$('.btnShowOnMap').click(function() {
 			clearMap();
 			var latitude = $('#latitude').val();
 			var longitude = $('#longitude').val();
